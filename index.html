@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PerSonal CV</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Garamond,serif;
+        }
+        body{
+            background: rgb(253,253,253);
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        /*right side start*/
+        .right{
+            position: fixed;
+            width: 50%;
+            background-color: rgb(37, 44, 54);
+            height: 100vh;
+            overflow: auto;
+        }
+        .right img{
+            max-width: 360px;
+            display: block;
+            margin: auto;
+            margin-top: 150px;
+            border: 1px solid #fff;
+            border-radius: 10px;
+        }
+        .right button{
+            padding: 8px 17px;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: #fff;
+            background-color: rgb(158, 158, 158);
+            border: none;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            float: right;
+            margin: 20px 50px 0 0;
+            cursor: pointer;
+        }
+        .right button:hover{
+            background-color: #fff;
+            color: #000;
+        }
+        .left{
+            margin-left: 50%;
+        }
+        @media screen and (max-width: 1200px) {
+            .right{
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .right img{
+                width: 25%;
+                display: block;
+                margin-top: 60px;
+                margin-bottom: 50px;
+            }
+            .right button{
+                padding: 5px 17px;
+                font-size: 15px;
+            }
+            .left {
+                margin-left: 0;
+            }
+        }
+
+        @media screen and (max-width: 560px) {
+            .right button{
+                padding: 5px 15px;
+                font-size: 13px;
+            }
+        }
+
+        /*right side end*/
+
+        /*left side start*/
+        
+        .navbar{
+            display: flex;
+            text-align: center;
+            padding: 20px;
+        }
+        .logo a{
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(158, 158, 158);
+        }
+        nav{
+            flex: 1;
+            text-align: right;
+        }
+        nav ul{
+            display: inline-block;
+            list-style-type: none;
+        }
+        nav ul li{
+            display: inline-block;
+        }
+        nav ul li a{
+            padding: 0 15px;
+            font-size: 18px;
+            font-weight: 600;
+            color: rgb(158, 158, 158);
+            transition: .5s ease-in-out .3s;
+        }
+        nav ul li a:hover{
+            color: #000;
+        }
+        .menu-icon{
+            display: none;
+        }
+        @media screen and (max-width: 790px){
+            .navbar{
+                position: relative;
+            }
+            nav ul{
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: rgb(37, 44, 54);
+                overflow: hidden;
+            }
+            nav ul li{
+                display: block;
+                margin: 20px 0 20px 0;
+                text-align: center;
+            }
+            
+            .menu-icon{
+                display: block;
+                cursor: pointer;
+            }
+        }
+        /*header start*/
+        .header{
+            display: block;
+            margin-left: 20%;
+            margin-top: 100px;
+            margin-right: 10%;
+        }
+        .header h1{
+            font-size: 90px;
+            line-height: 1.2;
+        }
+        .header h3{
+            font-size: 35px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 100;
+            line-height: 1.2;
+            color: rgb(92, 90, 90);
+        }
+        .header .address{
+            display: block;
+            margin-top: 70px;
+        }
+        .header .address h4{
+            font-size: 18px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 2;
+        }
+        .header .address h4 span{
+            font-size: 15px;
+            margin-left: 10px;
+            color: rgb(158, 158, 158);
+        }
+        .link{
+            margin-top: 10px;
+            color: rgb(158, 158, 158);
+        }
+        .link a{
+            font-size: 19px;
+            line-height: 1.5;
+            text-decoration: underline;
+            color: rgb(158, 158, 158);
+        }
+        .fullcv{
+            display: block;
+            margin-top: 100px;
+            margin-bottom: 300px;
+            font-size: 20px;
+        }
+        .fullcv span{
+            font-size: 30px;
+            padding: 20px;
+        }
+        .fullcv:hover{
+                color: rgb(158,158,158);
+            }
+        /*header end*/
+        /* about start*/
+        .about{
+            display: block;
+            margin-top: 100px;
+        }
+        .about h3{
+            font-size: 25px;
+            letter-spacing: 10px;
+            color: #000;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 10px;
+        }
+        .about h3:after{
+            content: "";
+            flex: 1 1;
+            border-bottom: 1px solid #000;
+            margin: auto;
+        }
+        .about p{
+            line-height: 2;
+            font-size: 21px;
+            color: rgb(158, 158, 158);
+            margin-bottom: 300px;
+        }
+        /* about end*/
+
+        /*skill start*/
+        .skill{
+            display: block;
+            margin-top: 100px;
+        }
+        .skill h3{
+            font-size: 25px;
+            letter-spacing: 10px;
+            color: #000;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 10px;
+        }
+        .skill h3:after{
+            content: "";
+            flex: 1 1;
+            border-bottom: 1px solid #000;
+            margin: auto;
+        }
+        .skill ul li{
+            line-height: 2;
+            font-size: 21px;
+            color: rgb(158, 158, 158);
+        }
+        .skill ul{
+            display: block;
+            margin-bottom: 300px;
+        }
+        /*skill end*/
+
+        /*education start*/
+        .education{
+            display: block;
+            margin-bottom: 100px;
+        }
+        .education h3{
+            font-size: 25px;
+            letter-spacing: 10px;
+            color: #000;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 10px;
+        }
+        .education h3:after{
+            content: "";
+            flex: 1 1;
+            border-bottom: 1px solid #000;
+            margin: auto;
+        }
+        .education h4{
+            font-size: 22px;
+            line-height: 1.8;
+        }
+        .education p{
+            line-height: 1.5;
+            font-size: 21px;
+            color: rgb(158, 158, 158);
+            margin-bottom: 300px;
+        }
+        /*education end*/
+
+        /* key start*/
+
+        .key{
+            display: block;
+            margin-bottom: 100px;
+        }
+        .key h3{
+            font-size: 25px;
+            letter-spacing: 10px;
+            color: #000;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 10px;
+        }
+        .key h3:after{
+            content: "";
+            flex: 1 1;
+            border-bottom: 1px solid #000;
+            margin: auto;
+        }
+        .key ul li{
+            line-height: 2;
+            font-size: 21px;
+            color: rgb(158, 158, 158);
+        }
+        .key ul{
+            display: block;
+            margin-bottom: 300px;
+        }
+        /* key end*/
+
+        /* address strat*/
+        .address{
+            display: block;
+            margin-bottom: 100px;
+        }
+        .address h3{
+            font-size: 25px;
+            letter-spacing: 10px;
+            color: #000;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 10px;
+        }
+        .address h3:after{
+            content: "";
+            flex: 1 1;
+            border-bottom: 1px solid #000;
+            margin: auto;
+        }
+        .address .link1 a{
+            display: flex;
+            flex-direction: column;
+            font-size: 19px;
+            line-height: 1.5;
+            text-decoration: underline;
+            color: rgb(158, 158, 158);
+        }
+        .address .link1{
+            display: block;
+            margin-bottom: 300px;
+        }
+        /* address end*/
+
+        /* footer start*/
+        .footer{
+            display: block;
+            margin: 50px 0;
+        }
+        .footer p{
+            text-align: center;
+            font-size: 20px;
+        }
+        /* footer end*/
+
+        /*left side end*/
+        
+    </style>
+</head>
+<body>
+    <!--start of right side-->
+        <div class="right">
+            <div>
+                <a href=""><button>Download CV</button></a>
+            </div>
+            <div>
+                <img src="./pic.jfif" width="50%">
+            </div>
+        </div>
+    <!--end of right side-->
+    <!--strat of left side-->
+        <div class="left">
+                <div class="navbar">
+                    <div class="logo">
+                        <a href="">Curriculum Vitae</a>
+                    </div>
+                    <nav >
+                        <ul id="topnav">
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#resume">Resume</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <img src="./menu.png" width="25px" class="menu-icon" onclick="toggle()">
+                </div>
+
+                <!--header start-->
+                <div class="header">
+                    <h1>Sneka M</h1>
+                    <h3>Programmer</h3>
+                    <div class="address">
+                        <h4>Phone <span>+91-1234567890</span></h4>
+                        <h4>Email <span>abc@gmail.com</span></h4>
+                        <h4>Address <span>1322a,abc street,de,UA</span></h4>
+                        <div class="link">
+                            <a href="">linkedin </a>&#9679;
+                            <a href="">Facebook </a>&#9679;
+                            <a href="">Twitter</a>
+                        </div>
+                    </div>
+                    
+                    <a href="" class="fullcv">Sell full CV <span>&#8595;</span> </a>
+
+                    <!--about start-->
+
+                    <div class="about" id="about">
+                        <h3>About</h3>
+                        <p>I'm eagerly willing to apply my academic skillsets 
+                            and updating new technologies implement towards 
+                            lunching a successful carrier as software developer.  
+                            Also bring a positive impact towards organization.</p>
+                    </div>
+
+                    <!--about end-->
+
+                    <!--skill start-->
+                    <div class="skill" id="resume">
+                        <h3>skill & expertise</h3>
+                        <ul>
+                            <li>I'm a paragraph. Click here to add your own text and edit me. 
+                                I’m a great place for you to tell a story and let your users  
+                                know a little more about you.</li>
+                            <li>I'm a paragraph. Click here to add your own text and edit me. 
+                                I’m a great place for you to tell a story and let your users 
+                                know a little more about you.</li>
+                             <li>I'm a paragraph. Click here to add your own text and edit me. 
+                                I’m a great place for you to tell a story and let your users  
+                                know a little more about you.</li>                            
+                        </ul>
+                    </div>
+
+                    <!--skill end-->
+
+                    <!--education start-->
+                    <div class="education">
+                        <h3>education</h3>
+                        <h4>2018 - 2022</h4>
+                        <h4>ABC Institute of Technology</h4>
+                        <p>B.Tech Information Technology.</p>
+                    </div>
+
+                    <!--education end-->
+
+                    <!--key achievments start-->
+                    <div class="key">
+                        <h3>KEY ACHIEVEMENT</h3>
+                        <ul>
+                            <li>I'm a paragraph. Click here to add your own text and edit me. 
+                                Let your users get to know you.</li>
+                            <li>I'm a paragraph. Click here to add your own text and edit me. 
+                                Let your users get to know you.</li>
+                            <li>I'm a paragraph. Click here to add your own text and edit me. 
+                                Let your users get to know you.</li>
+                        </ul>
+                    </div>
+
+
+                    <!--key achievments end-->
+
+                    <!--address start-->
+                    <div class="address" id="contact">
+                        <h3>contact </h3>
+                        <h4>Phone <span>+91-1234567890</span></h4>
+                        <h4>Email <span>abc@gmail.com</span></h4>
+                        <h4>Address <span>1322a,abc street,de,UA</span></h4>
+                        <div class="link1">
+                            <a href="">linkedin </a>
+                            <a href="">Facebook </a>
+                            <a href="">Twitter</a>
+                        </div>
+                    </div>
+                    <!--address end-->
+
+                </div>
+                <!--header end-->
+                <div class="footer">
+                    <p>&#169; 2021 - Tamilarasu</p>
+                </div>
+        </div>
+    <!--end of left side-->
+        
+
+    <!--navbar script-->
+    <script>
+        var mymenu = document.getElementById('topnav');
+        mymenu.style.maxHeight ='0px';
+        function toggle(){
+            if(mymenu.style.maxHeight == '0px'){
+                mymenu.style.maxHeight = '200px';
+            }else{
+                mymenu.style.maxHeight ='0px'
+            }
+        }
+    </script>
+</body>
+</html>
